@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love You</title>
+  <style>
+    /* CSS styles here */
+    html, body {
+      margin: 0;
+      height: 100%;
+    }
+    .bg_heart {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-image: url("vasukiVadiraj.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: -1;
+    }
+    .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #fff; /* White text color for better visibility */
+      font-family: 'Dancing Script', cursive; /* Romantic font */
+      overflow: hidden; /* Hide overflowing text */
+      padding: 20px; /* Add padding for better visibility */
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    }
+    .content-section {
+      margin-top: 30px; /* Add space between sections */
+    }
+    #text1 {
+      width: 100%; /* Adjust the width as needed */
+      margin-bottom: 20px; /* Add space between lines */
+    }
+    .heart {
+      position: absolute;
+      top: -50%;
+      transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -m-transform: rotate(-45deg);
+    }
+    .heart:before {
+      position: absolute;
+      top: -50%;
+      left: 0;
+      display: block;
+      content: "";
+      width: 100%;
+      height: 100%;
+      background: inherit;
+      border-radius: 100%;
+    }
+    .heart:after {
+      position: absolute;
+      top: 0;
+      right: -50%;
+      display: block;
+      content: "";
+      width: 100%;
+      height: 100%;
+      background: inherit;
+      border-radius: 100%;
+    }
+    @keyframes love {
+      0% { top: 110% }
+    }
+    @-webkit-keyframes love {
+      0% { top: 110% }
+    }
+    @-moz-keyframes love {
+      0% { top: 110% }
+    }
+    @-ms-keyframes love {
+      0% { top: 110% }
+    }
+</style>
+</head>
+<body>
+
+<div class="bg_heart"></div>
+<div class="container">
+  <div id="greetings" class="content-section"></div>
+  <div id="content" class="content-section"></div>
+  <div id="venue" class="content-section"></div>
+  <div id="dateTime" class="content-section"></div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  // JavaScript code here
+  var love = setInterval(function() {
+    var r_num = Math.floor(Math.random() * 40) + 1;
+    var r_size = Math.floor(Math.random() * 65) + 10;
+    var r_left = Math.floor(Math.random() * 100) + 1;
+    var r_bg = Math.floor(Math.random() * 25) + 100;
+    var r_time = Math.floor(Math.random() * 5) + 5;
+
+    $('.bg_heart').append("<div class='heart' style='width:" + r_size + "px;height:" + r_size + "px;left:" + r_left + "%;background:rgba(255," + (r_bg - 25) + "," + r_bg + ",1);-webkit-animation:love " + r_time + "s ease;-moz-animation:love " + r_time + "s ease;-ms-animation:love " + r_time + "s ease;animation:love " + r_time + "s ease'></div>");
+
+    $('.bg_heart').append("<div class='heart' style='width:" + (r_size - 10) + "px;height:" + (r_size - 10) + "px;left:" + (r_left + r_num) + "%;background:rgba(255," + (r_bg - 25) + "," + (r_bg + 25) + ",1);-webkit-animation:love " + (r_time + 5) + "s ease;-moz-animation:love " + (r_time + 5) + "s ease;-ms-animation:love " + (r_time + 5) + "s ease;animation:love " + (r_time + 5) + "s ease'></div>");
+  }, 500);
+
+  var i = 0;
+  var greetings = "Dear Friends and Family,\n\n";
+  var content = "We are thrilled to invite you to celebrate the engagement of our beloved techies, Vadiraj and Vasuki!\n\nVadiraj, the master coder, and Vasuki, the bug hunter extraordinaire, are joining forces for a lifetime of debugging and coding adventures. Together, they'll conquer the world one commit at a time, spreading joy, laughter, and romantic git merges along the way.\n\nPlease join us for a day filled with love, laughter, and plenty of bytes!\n\n";
+  var venue = "Venue: Gram, Industrial Area, 608/2, Amargol, KIADB, Hubballi, Karnataka 580025\n";
+  var dateTime = "Date & Time: April 04th, 2024 at 12 PM\n\n";
+
+  document.getElementById("greetings").innerText = greetings;
+  document.getElementById("content").innerText = content;
+  document.getElementById("venue").innerText = venue;
+  document.getElementById("dateTime").innerText = dateTime;
+</script>
+</body>
+</html>
